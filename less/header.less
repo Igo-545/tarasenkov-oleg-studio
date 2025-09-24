@@ -1,0 +1,39 @@
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    padding: 10px;
+    background: #ffffff;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    width: 100%;
+    z-index: 4;
+    opacity: 0;
+    column-gap: 10px;
+    animation: anim-op-header 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    &_link_col1{
+      max-width: 72px;
+    }
+    &_link_col2{
+      max-width: 68px;
+    }
+     &_link_col3{
+      max-width: 80px;
+    }
+    &_toggle{
+      position: fixed;
+      top: 14px;
+      display: inline-flex;
+      flex-shrink: 0;
+      right: 10px;
+      width: 32px;
+      height: 16px;
+    &_path{
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 0.5px solid #7c7e7b;
+    }
+    }
+}

@@ -1,0 +1,8 @@
+File from: [app/images/src/Запись экрана 2025-05-21 в 02.00.37 1.png]
+
+File to: [app/images/dest/Запись экрана 2025-05-21 в 02.00.37 1.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: C:\Users\user\Desktop\Potrfolio Olega\node_modules\pngquant-bin\vendor\pngquant.exe --quality=75-100 -o app/images/dest/Запись экрана 2025-05-21 в 02.00.37 1.png app/images/src/Запись экрана 2025-05-21 в 02.00.37 1.png
+  error: cannot open app\images\src\Запись экрана 2025-05-21 в 02.00.37 1.png for reading

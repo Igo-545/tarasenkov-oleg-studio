@@ -1,0 +1,246 @@
+.projects{
+    max-width: 100%;
+    position: relative;
+    &_header{
+      padding-top: 17px;
+      display: grid;
+      column-gap: 10px;
+      grid-template-columns: 6fr 6fr;
+      &_button{
+        color: currentColor;
+        display: inline-flex;
+        column-gap: 4px;
+        align-items: center;
+        &:first-child{
+          margin-right: 12px;
+        }
+        &_dot{
+          width: 16px;
+          height: 16px;
+          background: #ffffff;
+          border-radius: 50%;
+          border: 0.5px solid #7c7e7b;
+          opacity: 0;
+          &.current{
+          background: #000000;
+          opacity: 1;
+          border: none;
+          } 
+        }
+      }
+    }
+    &_body_tab{
+      position: relative;
+      margin-top: 5.5555vw;
+      margin-bottom: 11.111vw;
+      width: 100%;
+    }
+    &_body_tab1{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &_list{
+      display: grid;
+      grid-template-columns: 6fr 6fr;
+      position: relative;
+      column-gap: 10px;
+      &_container{
+        position: relative;
+        transform: scale(1.1, 1.1);
+        transition: 1.2s cubic-bezier(.22,1,.36,1);
+       }
+      &_block{
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        width: 40.694vw;
+        height: 0vw;
+        margin-top: -6.8055vw;
+        transform-origin: 0% 0%;
+        transition: 0.9s cubic-bezier(.22,1,.36,1);
+        }
+      &_block.mt_0{
+        margin-top: 0;
+        }
+      &_block.mt_13{
+        margin-top: -13.6111vw;
+        }
+      &_video{
+        opacity: 0;
+        object-fit: cover;
+        width: 40.694vw;
+        height: 26.1361vw; 
+       }
+       &_year{
+        grid-column: span 2 / span 2;
+       }
+       &_name{
+        grid-column: span 4 / span 4;
+       }
+       &_text{
+        font-size: 15px;
+        opacity: 0.4;
+        line-height: 28px;
+        }
+        &_col{
+          display: grid;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          position: relative;
+          padding: 1.6666vw 0;
+          height: 6.8055vw;
+          column-gap: 0.6944vw;
+          &:before{
+            position: absolute;
+            content: '';
+            display: block;
+            bottom: 0vw;
+            width: 100%;
+            height: 0.069444vw;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: 0% 0.069444vw;
+            opacity: 0.12;
+            transition: 0.9s cubic-bezier(.22,1,.36,1);
+            pointer-events: none;
+          }
+          &:after{
+            position: absolute;
+            content: '';
+            display: block;
+            bottom: 0vw;
+            width: 100%;
+            height: 1px;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: 0% 1px;
+            opacity: 1;
+            transition: 0.9s cubic-bezier(.22,1,.36,1);
+            pointer-events: none;
+          }
+          &:nth-child(1):before{
+            animation-delay: 0.25s
+          }
+          &:nth-child(2):before{
+            animation-delay: 0.5s
+          }
+          &:nth-child(3):before{
+            animation-delay: 0.75s
+          }
+          &:nth-child(4):before{
+            animation-delay: 1s
+          }
+          &:nth-child(5):before{
+            animation-delay: 1.25s
+          }
+          &:nth-child(5):before{
+            animation-delay: 1.5s
+          }
+          &:nth-child(6):before{
+            animation-delay: 1.75s
+          }
+          &:nth-child(7):before{
+            animation-delay: 1.75s
+          }
+          &:nth-child(8):before{
+            animation-delay: 2s
+          }
+          &:nth-child(9):before{
+            animation-delay: 2.25s
+          }
+        }
+        &:hover 
+           .projects_list_container{
+              transform: scale(1, 1);
+           }
+        &:hover 
+           .projects_list_block{
+              height: 26.1361vw;
+              transform-origin: 100% 50%;
+          }
+        &:hover 
+          .projects_list_video{
+            opacity: 1;
+        }    
+        &:hover 
+          .projects_list_text{
+            opacity: 1;
+            transition: 0.9s cubic-bezier(.22,1,.36,1);
+          }
+        &:hover .projects_list_col:after{
+          background-size: 100% 1px;
+        }
+    }
+    &_card{
+      width: 100%;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      vertical-align: middle;
+      background-attachment: fixed;
+      align-items: center;
+      &_content{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+      }
+      &_wrapper{
+        display: flex;
+        max-width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      &_title{
+        max-width: 56.52777vw;
+        font-size: 4.3055vw;
+        line-height: 110%;
+        vertical-align: middle;
+      }
+      &_text{
+        color: currentColor!important;
+        letter-spacing: -0.08611vw; 
+      }
+    }
+    &_img_1{
+      background-image: url("../images/dest/projects_img_1.png");
+    }
+    &_img_2{
+      background-image: url("../images/dest/projects_img_2.png");
+    }
+    &_img_3{
+      background-image: url("../images/dest/projects_img_3.png");
+    }
+    &_img_4{
+      background-image: url("../images/dest/projects_img_4.png");
+    }
+    &_img_5{
+      background-image: url("../images/dest/projects_img_5.png");
+    }
+    &_img_6{
+      background-image: url("../images/dest/projects_img_6.png");
+    }
+    &_img_7{
+      background-image: url("../images/dest/projects_img_7.png");
+    }
+    &_img_8{
+      background-image: url("../images/dest/projects_img_8.png");
+    }
+    &_img_9{
+      background-image: url("../images/dest/projects_img_9.png");
+    }
+    &_bg{
+      background: inherit;
+      height: 75vh;
+    }
+    &_body_tab.current{
+      display: block;
+    }
+  }
