@@ -1,16 +1,15 @@
-$(document).ready(function(){
-    $('#service, #service_2, #projects, #projects_2, #contact, #info').on('click', function(e){
+$('#service, #service_2, #projects, #projects_2, #contact, #info').on('click', function(e){
       e.preventDefault();
       var anchor = $(this).attr('href');
         $('html, body').stop().animate({
           scrollTop: $(anchor).offset().top - 45.8
         }, 800);
-  })});
+  });
 /*Intersection Observer*/
 window.addEventListener('DOMContentLoaded', () => { 
 const options = {
   root: null,
-  threshold: 0.25
+  threshold: 0.15
 }
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
