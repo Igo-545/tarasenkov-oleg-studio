@@ -9,7 +9,7 @@ $('#service, #service_2, #projects, #projects_2, #contact, #info').on('click', f
 window.addEventListener('DOMContentLoaded', () => { 
 const options = {
   root: null,
-  threshold: 0.15
+  threshold: 0.05
 }
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -23,7 +23,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       }
     })
     }, options);
-    const array = document.querySelectorAll(' .line_top, .projects_header_button_dot, .description_list.lines.splitting, .description_title.words.splitting, .projects_body_tab1.words.splitting, .footer_title.lines.splitting, .footer_link.lines.splitting,  .footer_top_item.lines.splitting, .footer_middle_item');
+    const array = document.querySelectorAll('.line_top, .projects_header_button_dot, .description_list.lines.splitting, .description_title.words.splitting, .projects_body_tab1.words.splitting, .footer_title.lines.splitting, .footer_link.lines.splitting,  .footer_top_item.lines.splitting, .footer_middle_item');
     array.forEach(i => {
         observer.observe(i);
     });

@@ -6,7 +6,6 @@
          url("../fonts/SuisseIntl-Light.ttf")format("truetype");
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
 }
 *, *:after, *:before{
     margin: 0;
@@ -19,6 +18,76 @@ html{
 html.lenis{
     min-height: 100vh;
 }
+.splitting .word{
+    position: relative;
+    display: inline-block;
+}
+.cover.lines.splitting span.word,
+.cover_title.lines.splitting span.word,
+.description_subtitle.lines.splitting,
+.description_title.words.splitting span.word,
+.projects_body_tab1.words.splitting span.word,
+.footer_top_item.lines.splitting span.word,
+.footer_link.words.splitting span.word{
+    opacity: 1;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 100% 50%;
+    transform: translate3d(0, 100%, 0);
+}
+.description_list.lines.splitting span.word{
+    opacity: 1;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 100%, 0);
+}
+.line_show {
+  animation: anim-line-top 2s cubic-bezier(.645,.045,.355,1) forwards;
+}
+ .cover.lines.splitting.anim_title span.word{
+    animation: anim-title 2s cubic-bezier(0.4, 0, 0.05, 1) forwards;
+    animation-delay: calc(300ms * var(--line-index));
+}
+.description_subtitle.lines.splitting.anim_subtitle{
+    animation: anim-subtitle 1s cubic-bezier(.645,.045,.355,1) forwards;
+    animation-delay: 2s;
+}
+ .line_top.is-inview{
+    animation: anim-scroll-line-top 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+}
+.projects_header_button_dot.is-inview{
+    animation: anim-scroll-dot 1s cubic-bezier(.645,.045,.355,1) forwards;
+}
+.description_list.lines.splitting.is-inview span.word{
+    animation: anim-list 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+    animation-delay: calc(50ms * var(--line-index));
+    }
+.description_title.words.splitting.is-inview span.word{
+    animation: anim-scroll-subtitle 1s cubic-bezier(.645,.045,.355,1) forwards;
+}
+.projects_body_tab1.words.splitting.is-inview span.word{
+    animation: anim-scroll-year 0.9s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay: calc(25ms * var(--word-index));
+    }
+ .projects_body_tab1.words.splitting.is-inview .projects_list_col:before{
+    animation: anim-scroll-bg 0.9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.footer_top_item.lines.splitting.is-inview span.word{
+    animation: anim-scroll-footer 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+    animation-delay: calc(50ms * var(--line-index));
+    }
+.footer_link.words.splitting.is-inview span.word{
+    animation: anim-scroll-list 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+    animation-delay: calc(50ms * var(--word-index));
+    }
+.footer_title.lines.splitting.is-inview span.word {
+    animation: anim-scroll-title 1.5s cubic-bezier(0.4, 0, 0.05, 1) forwards;
+    animation-delay: calc(200ms * var(--line-index));
+    }
+.footer_middle_item.is-inview{
+    animation: anim-op-footer 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    animation-delay: 0.2s;
+    }
 body{
     font-family: 'SuisseIntl Light';
     position: relative;
