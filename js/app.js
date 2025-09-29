@@ -23,7 +23,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       }
     })
     }, options);
-    const array = document.querySelectorAll('.description_list.lines.splitting, .description_title.words.splitting, .line_top, .projects_body_tab1.words.splitting, .footer_title.lines.splitting, .footer_link.lines.splitting, .projects_header_button_dot, .footer_top_item.lines.splitting, .footer_middle_item');
+    const array = document.querySelectorAll(' .line_top, .projects_header_button_dot, .description_list.lines.splitting, .description_title.words.splitting, .projects_body_tab1.words.splitting, .footer_title.lines.splitting, .footer_link.lines.splitting,  .footer_top_item.lines.splitting, .footer_middle_item');
     array.forEach(i => {
         observer.observe(i);
     });

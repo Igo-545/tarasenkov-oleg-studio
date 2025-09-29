@@ -8,6 +8,79 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
     <link rel="stylesheet" href="css/app.min.css">
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <style>
+      .splitting .word{
+        position: relative;
+        display: inline-block;
+        vertical-align: bottom;
+      }
+      .cover.lines.splitting span.word,
+      .cover_title.lines.splitting span.word,
+      .description_subtitle.lines.splitting,
+      .description_title.words.splitting span.word,
+      .projects_body_tab1.words.splitting span.word,
+      .footer_top_item.lines.splitting span.word,
+      .footer_link.words.splitting span.word{
+        opacity: 1;
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: 100% 50%;
+        transform: translate3d(0, 100%, 0);
+      }
+      .description_list.lines.splitting span.word{
+          opacity: 1;
+          position: relative;
+          transform-style: preserve-3d;
+          transform: translate3d(0, 100%, 0);
+        }
+      .line_show {
+        animation: anim-line-top 2s cubic-bezier(.645,.045,.355,1) forwards;
+      }
+      .cover.lines.splitting.anim_title span.word{
+        animation: anim-title 2s cubic-bezier(0.4, 0, 0.05, 1) forwards;
+        animation-delay: calc(300ms * var(--line-index));
+      }
+      .description_subtitle.lines.splitting.anim_subtitle{
+        animation: anim-subtitle 1s cubic-bezier(.645,.045,.355,1) forwards;
+        animation-delay: 2s;
+      }
+      .line_top.is-inview{
+        animation: anim-scroll-line-top 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+      }
+      .projects_header_button_dot.is-inview{
+        animation: anim-scroll-dot 1s cubic-bezier(.645,.045,.355,1) forwards;
+      }
+      .description_list.lines.splitting.is-inview span.word{
+        animation: anim-list 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+        animation-delay: calc(50ms * var(--line-index));
+      }
+      .description_title.words.splitting.is-inview span.word{
+        animation: anim-scroll-subtitle 1s cubic-bezier(.645,.045,.355,1) forwards;
+      }
+      .projects_body_tab1.words.splitting.is-inview span.word{
+        animation: anim-scroll-year 0.9s cubic-bezier(.22,1,.36,1) forwards;
+        animation-delay: calc(25ms * var(--word-index));
+      }
+      .projects_body_tab1.words.splitting.is-inview .projects_list_col:before{
+        animation: anim-scroll-bg 0.9s cubic-bezier(.22,1,.36,1) forwards;
+      }
+      .footer_top_item.lines.splitting.is-inview span.word{
+        animation: anim-scroll-footer 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+        animation-delay: calc(50ms * var(--line-index));
+      }
+      .footer_link.words.splitting.is-inview span.word{
+        animation: anim-scroll-list 1.2s cubic-bezier(.645,.045,.355,1) forwards;
+        animation-delay: calc(50ms * var(--word-index));
+      }
+      .footer_title.lines.splitting.is-inview span.word {
+        animation: anim-scroll-title 1.5s cubic-bezier(0.4, 0, 0.05, 1) forwards;
+        animation-delay: calc(200ms * var(--line-index));
+      }
+      .footer_middle_item.is-inview{
+        animation: anim-op-footer 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+        animation-delay: 0.2s;
+      }
+    </style>
 </head>
 <body class="light_theme">
     <header class="menu">
@@ -39,8 +112,11 @@
             </div>
             <ul class="description_list lines splitting"  data-splitting="lines">
               <li class="description_list_item">
-                <div class="mask_p">
-                  Art Direction
+                <div class="mask_t">
+                  Art
+                </div>
+                <div class="mask_t">
+                  Direction
                 </div>
               </li>
               <li class="description_list_item">
@@ -49,32 +125,43 @@
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
-                  Logo Design
+                <div class="mask_t">
+                  Logo
+                </div>
+                <div class="mask_t">
+                  Design
                 </div> 
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Websites
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
-                  Graphic Design
+                <div class="mask_t">
+                  Graphic
+                <div class="mask_t">
+                  Design
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
-                  Brand Guidelines
+                <div class="mask_t">
+                  Brand
+                </div>
+                <div class="mask_t">
+                  Guidelines
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
-                  Expo Design
+                <div class="mask_t">
+                  Expo
+                </div> 
+                <div class="mask_t">
+                  Design
                 </div>  
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Printing
                 </div>  
               </li>
@@ -86,42 +173,45 @@
             </div>
             <ul class="description_list lines splitting" data-splitting="lines">
               <li class="description_list_item">
-                <div class="mask_p">
-                  Information Technology
+                <div class="mask_t">
+                  Information
+                </div>
+                <div class="mask_t">
+                  Technology
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Finance
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Architecture
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Horeca
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Manufacturing
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Beauty
                 </div>
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Fashion
                 </div>  
               </li>
               <li class="description_list_item">
-                <div class="mask_p">
+                <div class="mask_t">
                   Consulting
                 </div>  
               </li>
@@ -421,8 +511,11 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Gurtam Soft</p>
                     </div>
-                    <div class="mask_l">
-                      <p class="projects_list_text">Information Technology — Brandbook</p>
+                    <div class="mask_t">
+                      <p class="projects_list_text">Information Technology — </p>
+                    </div>
+                    <div class="mask_t">
+                      <p class="projects_list_text">Brandbook</p>
                     </div>
                   </div> 
                 </div>
@@ -443,8 +536,11 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Finsei LTD</p>
                     </div>
-                    <div class="mask_l">
-                      <p class="projects_list_text">Digital Banking — Logo & Brandmanual</p>
+                    <div class="mask_t">
+                      <p class="projects_list_text">Digital Banking — Logo & </p>
+                    </div>
+                    <div class="mask_t">
+                      <p class="projects_list_text">Brandmanual</p>
                     </div>
                   </div>
                 </div>
@@ -465,7 +561,7 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Oksana Otchik</p>
                     </div>
-                    <div class="mask_l">
+                    <div class="mask_t">
                       <p class="projects_list_text">Interior designer — Website</p>
                     </div>
                   </div>
@@ -487,7 +583,7 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Skinlounge Beauty</p>
                     </div>
-                    <div class="mask_l">
+                    <div class="mask_t">
                       <p class="projects_list_text">Beauty salon — in process</p>
                     </div>
                   </div>
@@ -509,7 +605,7 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Hona Store</p>
                     </div>
-                    <div class="mask_l">
+                    <div class="mask_t">
                       <p class="projects_list_text">Interior items store — in process</p>
                     </div> 
                   </div>
@@ -531,9 +627,12 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Gastrofest</p>
                     </div>
-                    <div class="mask_l">
-                      <p class="projects_list_text">Festival — Corporate Identity & Website</p>
+                    <div class="mask_t">
+                      <p class="projects_list_text">Festival — Corporate Identity &</p>
                     </div> 
+                    <div class="mask_t">
+                      <p class="projects_list_text">Website</p>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -573,7 +672,7 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Delamer Bistro</p>
                     </div>
-                    <div class="mask_l">
+                    <div class="mask_t">
                       <p class="projects_list_text">Petit Bistro — in process</p>
                     </div>
                   </div>
@@ -593,7 +692,7 @@
                     <div class="mask_l">
                       <p class="projects_list_title">Draivn Corporation</p>
                     </div>
-                    <div class="mask_l">
+                    <div class="mask_t">
                       <p class="projects_list_text">IT Simplify Fleet Insurance — Logo</p>
                     </div>
                   </div>
@@ -604,43 +703,43 @@
       </section>
       <section class="offer">
         <div class="offer_title description_list lines splitting" data-splitting="lines">
-          <div class="mask_r offer_title_offset">
+          <div class="mask_t offer_title_offset">
             We  
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             provide 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             a 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             comprehensive
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             solution 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             that 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             includes 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             website 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             branding 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             and 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             corporate 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             printed 
           </div>
-          <div class="mask_r">
+          <div class="mask_t">
             materials.
           </div>  
         </div>
@@ -648,78 +747,102 @@
           <div class="line_top"></div>
           <div class="offer_item">
             <h2 class="description_list lines splitting mt_15" data-splitting="lines">
-              <div class="mask_p">
-                (01) Branding
+              <div class="mask_t">
+                (01)
+              </div>
+              <div class="mask_t">
+                Branding
               </div>
             </h2>
            <ul class="description_list lines splitting mt_15" data-splitting="lines">
             <li>
-              <div class="mask_p">
-                Brand Audit
+              <div class="mask_t">
+                Brand
+              </div>
+              <div class="mask_t">
+                Audit
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Brand Architecture
+              <div class="mask_t">
+                Brand
+              </div>
+              <div class="mask_t">
+                Architecture
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Voice & Tone
+              <div class="mask_t">
+                Voice
+              </div>
+              <div class="mask_t">
+                & 
+              </div>
+              <div class="mask_t">
+                Tone
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Logotype
               </div> 
             </li>
             <li>
-              <div class="mask_p">
-                Corporate color
+              <div class="mask_t">
+                Corporate
+              </div>
+              <div class="mask_t">
+                color
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Typography
               </div> 
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Photostyle
               </div>  
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Iconography
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Animation
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Corporate identity
+              <div class="mask_t">
+                Corporate
+              </div>
+              <div class="mask_t">
+                identity
               </div> 
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Stationary
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Social Madia
+              <div class="mask_t">
+                Social
+              </div>
+              <div class="mask_t">
+                Madia
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Merch
               </div>  
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Presentation
               </div>  
             </li>
@@ -729,54 +852,81 @@
           <div class="line_top"></div>
           <div class="offer_item">
             <h2 class="description_list lines splitting mt_15" data-splitting="lines">
-              <div class="mask_p">
-                (02) Website
+              <div class="mask_t">
+                (02)
+              </div>
+              <div class="mask_t">
+                Website
               </div>
             </h2>
             <ul class="description_list lines splitting mt_15" data-splitting="lines">
             <li>
-              <div class="mask_p">
-                UX/ UI Research
+              <div class="mask_t">
+                UX/ UI
+              </div>
+              <div class="mask_t">
+                Research
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Web Design
+              <div class="mask_t">
+                Web
+              </div>
+              <div class="mask_t">
+                Design
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Prototyping
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Frontend Development
+              <div class="mask_t">
+                Frontend
+              </div>
+              <div class="mask_t">
+                Development
               </div> 
             </li>
             <li>
-              <div class="mask_p">
-                Corporate website
+              <div class="mask_t">
+                Corporate
+              </div>
+              <div class="mask_t">
+                website
+              </div>
+            </li>
+            <li> 
+              <div class="mask_t">
+                SEO
+              </div>
+              <div class="mask_t">
+                (standart settings)
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                SEO (standart settings)
-              </div> 
-            </li>
-            <li>
-              <div class="mask_p">
-                Webflow platform
+              <div class="mask_t">
+                Webflow
+              </div>
+              <div class="mask_t">
+                platform
               </div>  
             </li>
             <li>
-              <div class="mask_p">
-                Tilda (custom code)
+              <div class="mask_t">
+                Tilda
+              </div>
+              <div class="mask_t">
+                (custom code)
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Custom website
+              <div class="mask_t">
+                Custom
+              </div>
+              <div class="mask_t">
+                website
               </div>
             </li>
             </ul>
@@ -786,53 +936,65 @@
           <div class="line_top"></div>
           <div class="offer_item offer_item_last">
           <h2 class="description_list lines splitting mt_15" data-splitting="lines">
-            <div class="mask_p">
-              (03) Print materials
+            <div class="mask_t">
+              (03)
+            </div>
+            <div class="mask_t">
+              Print 
+            </div>
+            <div class="mask_t">
+              materials
             </div>
           </h2>
           <ul class="description_list lines splitting mt_15" data-splitting="lines">
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Letterpress
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Digital Printing
+              <div class="mask_t">
+                Digital
+              </div>
+              <div class="mask_t">
+                Printing
               </div>
             </li>
             <li>
-              <div class="mask_p">
-                Business Cards
+              <div class="mask_t">
+                Business
+              </div>
+              <div class="mask_t">
+                Cards
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Certificate
               </div> 
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Envelopes
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Booklets
               </div> 
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Blanks
               </div>  
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Presentations
               </div>
             </li>
             <li>
-              <div class="mask_p">
+              <div class="mask_t">
                 Packaging
               </div>
             </li>
@@ -845,8 +1007,8 @@
       <div class="line_top"></div>
       <div class="footer_top">
         <h2 class="footer_top_item footer_link lines splitting" data-splitting="words">
-          <div class="mask_t">
-            <span>Contacts</span>
+          <div class="mask_p">
+            Contacts
           </div>
         </h2>
         <div class="footer_top_item footer_link lines splitting" data-splitting="words">
@@ -907,13 +1069,13 @@
       </div>
       <div class="footer_middle">
         <div class="footer_middle_item description_list lines splitting" data-splitting="lines">
-          <span>Branding</span>
+          Branding
         </div>
         <div class="footer_middle_item description_list lines splitting" data-splitting="lines">
-          <span>Web Site</span>
+          Web Site
         </div>
         <div class="footer_middle_item description_list lines splitting" data-splitting="lines">
-          <span>Print materials</span>
+          Print materials
         </div>
       </div>
       <div class="footer_bottom">
